@@ -1,0 +1,51 @@
+---
+import "../styles/global.css";
+
+const {
+  title = "Franklin Liu",
+  description = "Personal website for research, papers, projects, and notes."
+} = Astro.props;
+
+const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/papers", label: "Academic" },
+  { href: "/projects", label: "Projects" },
+  { href: "/cv", label: "CV" }
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Franklin Liu home">
+        <span class="brand-mark">FL</span>
+        <span>Franklin Liu</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        {
+          navItems.map((item) => (
+            <a href={item.href} class={Astro.url.pathname === item.href ? "active" : ""}>
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <span>Franklin Liu</span>
+      <span>Research, projects, and selected notes.</span>
+    </footer>
+  </body>
+</html>

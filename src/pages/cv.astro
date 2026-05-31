@@ -1,0 +1,60 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="CV | Franklin Liu">
+  <section class="page-title">
+    <p class="eyebrow">Background</p>
+    <h1>CV</h1>
+    <p>
+      A concise academic and project-oriented profile. The current PDF version is available
+      below.
+    </p>
+    <div class="hero-actions" aria-label="CV download">
+      <a class="button primary" href="/files/franklin-liu-cv.pdf">Download CV</a>
+    </div>
+  </section>
+
+  <section class="cv-grid">
+    <div>
+      <h2>About</h2>
+      <p>
+        Write a short bio in first person or third person. The best version names your
+        current role, core research interests, and the kinds of problems you like to solve.
+      </p>
+    </div>
+    <div>
+      <h2>Experience</h2>
+      <ol class="timeline">
+        <li>
+          <span>2026</span>
+          <strong>Role or Affiliation</strong>
+          <p>One sentence about the work and its scope.</p>
+        </li>
+        <li>
+          <span>2025</span>
+          <strong>Previous Role</strong>
+          <p>One sentence about the work and its scope.</p>
+        </li>
+      </ol>
+    </div>
+    <div>
+      <h2>Education</h2>
+      <ol class="timeline">
+        <li>
+          <span>Year</span>
+          <strong>Degree or Program</strong>
+          <p>Institution and area of study.</p>
+        </li>
+      </ol>
+    </div>
+    <div>
+      <h2>Links</h2>
+      <div class="link-row">
+        <a href="https://github.com/frank22lin">GitHub</a>
+        <a href="https://www.linkedin.com/in/franklinliu22/">LinkedIn</a>
+        <a href="/files/franklin-liu-cv.pdf">CV PDF</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

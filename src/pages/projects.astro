@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { projects } from "../data/projects";
+---
+
+<BaseLayout title="Projects | Franklin Liu">
+  <section class="page-title">
+    <p class="eyebrow">Portfolio</p>
+    <h1>Projects</h1>
+    <p>
+      Software, research prototypes, analyses, and experiments. Keep descriptions concrete:
+      what changed, what you built, and where it can be inspected.
+    </p>
+  </section>
+
+  <section class="project-grid">
+    {
+      projects.map((project) => (
+        <article class="project-card">
+          <div class="item-meta">
+            <span>{project.status}</span>
+            <span>{project.role}</span>
+          </div>
+          <h2>{project.title}</h2>
+          <p>{project.description}</p>
+          <div class="tag-row">
+            {project.stack.map((item) => (
+              <span>{item}</span>
+            ))}
+          </div>
+          <div class="link-row">
+            {project.links.map((link) => (
+              <a href={link.href}>{link.label}</a>
+            ))}
+          </div>
+        </article>
+      ))
+    }
+  </section>
+</BaseLayout>

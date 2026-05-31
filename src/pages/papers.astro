@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { papers } from "../data/papers";
+
+const groupedPapers = [
+  {
+    label: "Papers",
+    items: papers.filter((paper) => paper.type === "Class Paper" || paper.type === "Thesis")
+  },
+  {
+    label: "Seminar Presentations",
+    items: papers.filter((paper) => paper.type === "Seminar Presentation")
+  }
+];
+---
+
+<BaseLayout title="Academic Work | Franklin Liu">
+  <section class="page-title">
+    <p class="eyebrow">Research</p>
+    <h1>Academic Work</h1>
+    <p>
+      Class papers, seminar presentations, and thesis work. Edit
+      <code>src/data/papers.ts</code> to add or update entries.
+    </p>
+  </section>
+
+  <section class="content-column">
+    {
+      groupedPapers.map((group) => (
+        group.items.length > 0 && (
+          <section class="work-group" aria-labelledby={group.label.toLowerCase().replaceAll(" ", "-")}>
+            <h2 id={group.label.toLowerCase().replaceAll(" ", "-")}>{group.label}</h2>
+            {group.items.map((paper) => (
+              <article class="paper-entry">
+                <div class="paper-year">{paper.year}</div>
+                <div>
+                  <div class="item-meta">
+                    <span>{paper.type}</span>
+                    <span>{paper.venue}</span>
+                  </div>
+                  <h3>{paper.title}</h3>
+                  <p class="authors">{paper.authors}</p>
+                  <p>{paper.summary}</p>
+                  <div class="tag-row">
+                    {paper.tags.map((tag) => (
+                      <span>{tag}</span>
+                    ))}
+                  </div>
+                  <div class="link-row">
+                    {paper.links.map((link) => (
+                      <a href={link.href}>{link.label}</a>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </section>
+        )
+      ))
+    }
+  </section>
+</BaseLayout>
