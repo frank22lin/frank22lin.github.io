@@ -1,7 +1,5 @@
 export type Paper = {
   title: string;
-  authors: string;
-  venue: string;
   type: "Class Paper" | "Seminar Presentation" | "Thesis";
   year: number;
   summary: string;
@@ -15,8 +13,6 @@ export type Paper = {
 export const papers: Paper[] = [
   {
     title: "Bluffing and Strategic Reticence in Prediction Markets",
-    authors: "Franklin Liu",
-    venue: "Class paper",
     type: "Class Paper",
     year: 2026,
     summary:
@@ -26,8 +22,6 @@ export const papers: Paper[] = [
   },
   {
     title: "Modelling Limit Order Books via Conditional Diffusion Model",
-    authors: "Franklin Liu",
-    venue: "Undergraduate thesis",
     type: "Thesis",
     year: 2024,
     summary:
@@ -40,8 +34,6 @@ export const papers: Paper[] = [
   },
   {
     title: "From Singularities to Asymptotic Bounds",
-    authors: "Franklin Liu",
-    venue: "Class paper",
     type: "Class Paper",
     year: 2023,
     summary:
@@ -51,8 +43,6 @@ export const papers: Paper[] = [
   },
   {
     title: "Path Signatures with Financial Applications",
-    authors: "Franklin Liu",
-    venue: "Seminar presentation",
     type: "Seminar Presentation",
     year: 2024,
     summary:
@@ -62,8 +52,6 @@ export const papers: Paper[] = [
   },
   {
     title: "Finding Domino Tilings with Maximal Monotonic Paths using Wagner's Method",
-    authors: "Franklin Liu",
-    venue: "Seminar presentation",
     type: "Seminar Presentation",
     year: 2022,
     summary:
