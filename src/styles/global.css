@@ -779,11 +779,6 @@ body {
   margin-top: clamp(1.4rem, 3vw, 2.2rem);
 }
 
-.profile-hero + .work-section {
-  margin-inline: -1.5rem;
-  padding-inline: 1.5rem;
-}
-
 .work-section:first-of-type,
 .content-column .work-group:first-child {
   border-top: 1px solid var(--line);
