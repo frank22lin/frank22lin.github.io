@@ -14,58 +14,61 @@ export type Paper = {
 
 export const papers: Paper[] = [
   {
-    title: "Singularity Analysis in Combinatorics",
+    title: "Bluffing and Strategic Reticence in Prediction Markets",
     authors: "Franklin Liu",
     venue: "Class paper",
     type: "Class Paper",
     year: 2026,
     summary:
-      "An expository class paper on singularity analysis and its use in extracting asymptotic information from generating functions.",
-    tags: ["Combinatorics", "Asymptotics", "Generating Functions"],
-    links: [{ label: "PDF", href: "/files/singularity-analysis-in-combinatorics.pdf" }]
-  },
-  {
-    title: "Algorithmic Game Theory",
-    authors: "Franklin Liu",
-    venue: "Class paper",
-    type: "Class Paper",
-    year: 2026,
-    summary:
-      "A class paper exploring core ideas in algorithmic game theory, where computation, incentives, and strategic behavior meet.",
-    tags: ["Game Theory", "Algorithms", "Theory"],
+      "Final project for TTIC 31260: Algorithmic Game Theory, taught by Prof. Avrim Blum at Toyota Technological Institute at Chicago, examining incentive compatibility in prediction markets through the Logarithmic Market Scoring Rule (LMSR) and Dynamic Parimutuel Market mechanisms. Based on Chen, Y., Reeves, D. M., Pennock, D. M., Hanson, R. D., Fortnow, L., & Gonen, R. (2010).",
+    tags: ["Algorithmic Game Theory", "Prediction Markets"],
     links: [{ label: "PDF", href: "/files/algorithmic-game-theory.pdf" }]
   },
   {
-    title: "Signatures and Data Science",
-    authors: "Franklin Liu",
-    venue: "Seminar presentation",
-    type: "Seminar Presentation",
-    year: 2026,
-    summary:
-      "A seminar presentation on path signatures and their role as structured features for data science problems.",
-    tags: ["Data Science", "Signatures", "Seminar"],
-    links: [{ label: "Slides", href: "/files/signatures-and-data-science.pdf" }]
-  },
-  {
-    title: "Thesis Presentation",
-    authors: "Franklin Liu",
-    venue: "Seminar presentation",
-    type: "Seminar Presentation",
-    year: 2026,
-    summary:
-      "A presentation version of my thesis work, organized for a seminar audience.",
-    tags: ["Thesis", "Presentation", "Seminar"],
-    links: [{ label: "Slides", href: "/files/thesis-presentation.pdf" }]
-  },
-  {
-    title: "Thesis",
+    title: "Modelling Limit Order Books via Conditional Diffusion Model",
     authors: "Franklin Liu",
     venue: "Undergraduate thesis",
     type: "Thesis",
-    year: 2025,
+    year: 2024,
     summary:
-      "My thesis, collected as the full written artifact.",
-    tags: ["Thesis", "Research"],
-    links: [{ label: "PDF", href: "/files/thesis-franklin-liu.pdf" }]
-  }
+      "Undergraduate thesis at TU Berlin, advised by Prof. Peter Friz and Prof. Dr. Klaus-Robert Müller. Reviews the mathematical framework for modelling order books and proposes a conditional diffusion model for generating realistic limit order book states. Evaluates the model on BTC/USDT order book data and studies its ability to reproduce known microstructure stylized facts.",
+    tags: ["Diffusion Models", "Stochastic Processes", "Market Microstructure"],
+    links: [
+      { label: "PDF", href: "/files/thesis-franklin-liu.pdf" },
+      { label: "Slides", href: "/files/thesis-presentation.pdf" }
+    ]
+  },
+  {
+    title: "From Singularities to Asymptotic Bounds",
+    authors: "Franklin Liu",
+    venue: "Class paper",
+    type: "Class Paper",
+    year: 2023,
+    summary:
+      "Final project for Math 246A: Complex Analysis, taught by Prof. Terence Tao at UCLA, examining how asymptotic bounds on combinatorial sequences can be derived by treating generating functions as complex functions and analysing their singularities.",
+    tags: ["Complex Analysis", "Analytic Combinatorics"],
+    links: [{ label: "PDF", href: "/files/singularity-analysis-in-combinatorics.pdf" }]
+  },
+  {
+    title: "Path Signatures with Financial Applications",
+    authors: "Franklin Liu",
+    venue: "Seminar presentation",
+    type: "Seminar Presentation",
+    year: 2024,
+    summary:
+      "Talk in a seminar led by Prof. Peter Friz at TU Berlin, exploring applications of path signatures to financial time series. Covers the signature transform as a feature map for sequential data and its use in limit order book modelling and mid-price prediction, including a log-signature neural network approach.",
+    tags: ["Path Signatures", "Data Science"],
+    links: [{ label: "Slides", href: "/files/signatures-and-data-science.pdf" }]
+  },
+  {
+    title: "Finding Domino Tilings with Maximal Monotonic Paths using Wagner's Method",
+    authors: "Franklin Liu",
+    venue: "Seminar presentation",
+    type: "Seminar Presentation",
+    year: 2022,
+    summary:
+      "Using Wagner's deep cross-entropy method to generate counterexamples for domino tiling problems.",
+    tags: ["Combinatorics", "Cross-Entropy Methods"],
+    links: [{ label: "Slides", href: "/files/domino-tilings.pdf" }]
+  },
 ];

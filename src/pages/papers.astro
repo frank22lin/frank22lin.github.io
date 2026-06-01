@@ -4,11 +4,14 @@ import { papers } from "../data/papers";
 
 const groupedPapers = [
   {
-    label: "Papers",
+    label: "Selected Papers",
+    description:
+      "A selection of course and research papers I thought would be interesting to share.",
     items: papers.filter((paper) => paper.type === "Class Paper" || paper.type === "Thesis")
   },
   {
-    label: "Seminar Presentations",
+    label: "Seminars",
+    description: "Presentation slides from past seminar talks.",
     items: papers.filter((paper) => paper.type === "Seminar Presentation")
   }
 ];
@@ -19,8 +22,7 @@ const groupedPapers = [
     <p class="eyebrow">Research</p>
     <h1>Academic Work</h1>
     <p>
-      Class papers, seminar presentations, and thesis work. Edit
-      <code>src/data/papers.ts</code> to add or update entries.
+      Selected academic writing, seminar slides, and thesis materials.
     </p>
   </section>
 
@@ -29,28 +31,35 @@ const groupedPapers = [
       groupedPapers.map((group) => (
         group.items.length > 0 && (
           <section class="work-group" aria-labelledby={group.label.toLowerCase().replaceAll(" ", "-")}>
-            <h2 id={group.label.toLowerCase().replaceAll(" ", "-")}>{group.label}</h2>
+            <header class="section-heading">
+              <h2 id={group.label.toLowerCase().replaceAll(" ", "-")}>{group.label}</h2>
+              <p>{group.description}</p>
+            </header>
             {group.items.map((paper) => (
-              <article class="paper-entry">
-                <div class="paper-year">{paper.year}</div>
-                <div>
-                  <div class="item-meta">
-                    <span>{paper.type}</span>
-                    <span>{paper.venue}</span>
-                  </div>
+              <article class="academic-list-item">
+                <div class="row-year">{paper.year}</div>
+                <div class="row-body">
                   <h3>{paper.title}</h3>
-                  <p class="authors">{paper.authors}</p>
-                  <p>{paper.summary}</p>
+                  <p class="row-meta">
+                    <span>
+                      {paper.type === "Thesis"
+                        ? "Undergraduate Thesis"
+                        : paper.type === "Class Paper"
+                          ? "Course Paper"
+                          : "Seminar Presentation"}
+                    </span>
+                  </p>
                   <div class="tag-row">
                     {paper.tags.map((tag) => (
                       <span>{tag}</span>
                     ))}
                   </div>
-                  <div class="link-row">
-                    {paper.links.map((link) => (
-                      <a href={link.href}>{link.label}</a>
-                    ))}
-                  </div>
+                  <p class="row-description">{paper.summary}</p>
+                </div>
+                <div class="row-actions">
+                  {paper.links.map((link) => (
+                    <a href={link.href}>{link.label}</a>
+                  ))}
                 </div>
               </article>
             ))}

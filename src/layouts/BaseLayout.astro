@@ -25,27 +25,26 @@ const navItems = [
     <title>{title}</title>
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="/" aria-label="Franklin Liu home">
-        <span class="brand-mark">FL</span>
+    <div class="page-shell">
+      <header class="top-header">
+        <a class="brand" href="/" aria-label="Franklin Liu home">Franklin Liu</a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          {
+            navItems.map((item) => (
+              <a href={item.href} class={Astro.url.pathname === item.href ? "active" : ""}>
+                {item.label}
+              </a>
+            ))
+          }
+        </nav>
+      </header>
+      <main>
+        <slot />
+      </main>
+      <footer class="site-footer">
         <span>Franklin Liu</span>
-      </a>
-      <nav class="site-nav" aria-label="Primary navigation">
-        {
-          navItems.map((item) => (
-            <a href={item.href} class={Astro.url.pathname === item.href ? "active" : ""}>
-              {item.label}
-            </a>
-          ))
-        }
-      </nav>
-    </header>
-    <main>
-      <slot />
-    </main>
-    <footer class="site-footer">
-      <span>Franklin Liu</span>
-      <span>Research, projects, and selected notes.</span>
-    </footer>
+        <span>Research, projects, and selected notes.</span>
+      </footer>
+    </div>
   </body>
 </html>

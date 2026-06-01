@@ -3,7 +3,8 @@ export type Project = {
   description: string;
   role: string;
   stack: string[];
-  status: "Active" | "Archived" | "Concept";
+  tags: string[];
+  status: string;
   links: {
     label: string;
     href: string;
@@ -12,24 +13,23 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "Selected Project",
+    title: "Polymarket Backtester",
     description:
-      "A concise description of what the project does, why it matters, and what you contributed.",
-    role: "Research, design, and implementation",
-    stack: ["Astro", "TypeScript", "Python"],
-    status: "Active",
-    links: [
-      { label: "GitHub", href: "#" },
-      { label: "Demo", href: "#" }
-    ]
+      "A data and backtesting toolkit for researching prediction-market strategies on Polymarket.",
+    role: "Python, data engineering, backtesting",
+    stack: ["Python", "Data Engineering", "Backtesting"],
+    tags: ["Trading"],
+    status: "2026",
+    links: [{ label: "GitHub", href: "https://github.com/frank22lin/polymarket_data" }]
   },
   {
-    title: "Tool or Experiment",
+    title: "Agentic Research System for Optimal Execution",
     description:
-      "A smaller build, prototype, or analysis project can live here without needing a full case study.",
-    role: "Solo project",
-    stack: ["Python", "Data"],
-    status: "Archived",
-    links: [{ label: "Notes", href: "#" }]
+      "An agentic research system for iterating on trading experiments and studying optimal execution, in collaboration with Event Horizon Labs.",
+    role: "Python, research automation, market simulation",
+    stack: ["Python", "Agents", "Market Simulation"],
+    tags: ["Optimal Execution", "Agentic Research"],
+    status: "2026",
+    links: [{ label: "GitHub", href: "https://github.com/tonyhieu/agentic-trading-system" }]
   }
 ];
