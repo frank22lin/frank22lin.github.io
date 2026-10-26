@@ -3,7 +3,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { papers } from "../data/papers";
 import { projects } from "../data/projects";
 
-const selectedPapers = papers.filter((paper) => paper.type === "Class Paper" || paper.type === "Thesis");
+const selectedPapers = papers.filter(
+  (paper) => paper.type === "Research Paper" || paper.type === "Class Paper" || paper.type === "Thesis"
+);
 const selectedPresentations = papers.filter((paper) => paper.type === "Seminar Presentation");
 const selectedProjects = projects.slice(0, 3);
 ---
@@ -47,8 +49,19 @@ const selectedProjects = projects.slice(0, 3);
             <div class="row-body">
               <h3>{paper.title}</h3>
               <p class="row-meta">
-                <span>{paper.type === "Thesis" ? "Undergraduate Thesis" : "Course Paper"}</span>
+                <span>
+                  {paper.type === "Research Paper"
+                    ? "Research Paper"
+                    : paper.type === "Thesis"
+                      ? "Undergraduate Thesis"
+                      : "Course Paper"}
+                </span>
               </p>
+              {paper.venues && (
+                <p class="row-venues">
+                  {paper.venues.map((venue) => <span>{venue}</span>)}
+                </p>
+              )}
               <div class="tag-row">
                 {paper.tags.map((tag) => <span>{tag}</span>)}
               </div>

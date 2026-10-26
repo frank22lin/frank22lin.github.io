@@ -7,7 +7,7 @@ const groupedPapers = [
     label: "Selected Papers",
     description:
       "A selection of course and research papers I thought would be interesting to share.",
-    items: papers.filter((paper) => paper.type === "Class Paper" || paper.type === "Thesis")
+    items: papers.filter((paper) => paper.type === "Research Paper" || paper.type === "Class Paper" || paper.type === "Thesis")
   },
   {
     label: "Seminars",
@@ -42,13 +42,22 @@ const groupedPapers = [
                   <h3>{paper.title}</h3>
                   <p class="row-meta">
                     <span>
-                      {paper.type === "Thesis"
+                      {paper.type === "Research Paper"
+                        ? "Research Paper"
+                        : paper.type === "Thesis"
                         ? "Undergraduate Thesis"
                         : paper.type === "Class Paper"
                           ? "Course Paper"
                           : "Seminar Presentation"}
                     </span>
                   </p>
+                  {paper.venues && (
+                    <p class="row-venues">
+                      {paper.venues.map((venue) => (
+                        <span>{venue}</span>
+                      ))}
+                    </p>
+                  )}
                   <div class="tag-row">
                     {paper.tags.map((tag) => (
                       <span>{tag}</span>
