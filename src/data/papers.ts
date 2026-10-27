@@ -1,7 +1,8 @@
 export type Paper = {
   title: string;
-  type: "Class Paper" | "Seminar Presentation" | "Thesis";
+  type: "Research Paper" | "Class Paper" | "Seminar Presentation" | "Thesis";
   year: number;
+  venues?: string[];
   summary: string;
   tags: string[];
   links: {
@@ -11,6 +12,25 @@ export type Paper = {
 };
 
 export const papers: Paper[] = [
+  {
+    title: "Probabilistic Limit Order Book Forecasting with Conditional Diffusion Models",
+    type: "Research Paper",
+    year: 2026,
+    venues: ["ICAIF 2026 (Oral)", "ICML 2026 SPIGM Workshop"],
+    summary:
+      "With Junyu Chen, Moshu Xu, and Prof. Lijian Yang. Proposes LOBGrad, a conditional diffusion model with a recurrent encoder for probabilistic limit order book forecasting, backed by an excess-risk guarantee and evaluated on BTC/USDT, GOOGL, and META.",
+    tags: ["Diffusion Models", "Statistical Learning Theory", "Market Microstructure"],
+    links: [{ label: "arXiv", href: "https://arxiv.org/abs/2610.25495" }]
+  },
+  {
+    title: "Architecting the Research Loop: Design Choices for Hypothesis-Generating Agents",
+    type: "Research Paper",
+    year: 2026,
+    summary:
+      "In collaboration with Event Horizon Labs. An empirical study of research-loop design for hypothesis-generating agents building execution algorithms for Micro E-mini S&P 500 futures. Sharing knowledge between parallel agents helps most; extra deliberation and longer context do not.",
+    tags: ["LLM Agents", "Automated Research", "Algorithmic Execution"],
+    links: [{ label: "PDF", href: "/files/architecting-the-research-loop.pdf" }]
+  },
   {
     title: "Bluffing and Strategic Reticence in Prediction Markets",
     type: "Class Paper",

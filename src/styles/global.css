@@ -886,6 +886,22 @@ body {
   text-align: right;
 }
 
+.row-venues {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.4rem 0 0;
+}
+
+.row-venues span {
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent-dark);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.16rem 0.48rem;
+}
+
 .tag-row {
   gap: 0.35rem;
   margin-top: 0.55rem;
